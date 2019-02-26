@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% for a in article %}
+		<div class="post">
+			<div class="date">
+	        	{{ a.published_date }}
+	    	</div>
+			<h1><a href="{% url 'detail' pk=a.pk %}">{{ a.title }}</a></h1>
+			<p>{{ a.content|linebreaksbr }}</p>
+			</br>
+		</div>
+	{% endfor %}
+{% endblock %}
